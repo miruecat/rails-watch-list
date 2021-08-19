@@ -1,0 +1,5 @@
+<% @lists.each do |list| %>
+<%= list.name %>
+<%= link_to "details", list_path(list) %>
+<br>
+<% end %>
