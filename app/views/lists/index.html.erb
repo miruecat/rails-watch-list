@@ -1,5 +1,9 @@
 <% @lists.each do |list| %>
-<%= list.name %>
-<%= link_to "details", list_path(list) %>
+  <%= list.name %>
+  <%= link_to "details", list_path(list) %>
+  <% if list.photo.attached? %>
+    <%= cl_image_tag list.photo.key, height: 100, width: 200, crop: :fill, class: "list-image" %>
+<% end %>
 <br>
 <% end %>
+<%= link_to "create a new list", new_list_path %>
