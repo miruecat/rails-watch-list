@@ -1,7 +1,8 @@
-<h1><%= @list.name %></h1>
+<h3><%= @list.name %></h3>
 <ul>
   <% @list.bookmarks.each do |bookmark| %>
     <li><%= bookmark.comment %>  :  <%= bookmark.movie.title %></li>
+    <%= image_tag bookmark.movie.poster_url, width:"300", height:"400" %>
     <%= link_to "Remove", bookmark_path(bookmark), method: :delete, data: { confirm: "Are you sure?" } %>
   <% end %>
 </ul>
